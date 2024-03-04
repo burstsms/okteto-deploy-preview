@@ -66,6 +66,8 @@ echo running: okteto preview deploy $name --scope $scope --branch="${branch}" --
 ret=0
 okteto preview deploy $name --scope $scope --branch="${branch}" --repository="${GITHUB_SERVER_URL}/${repository}" --sourceUrl="${GITHUB_SERVER_URL}/${repository}/pull/${number}" ${params} --wait || ret=1
 
+echo "namespace=$name" >> $GITHUB_OUTPUT
+
 if [ -z "$number" ] || [ "$number" = "null" ]; then
   echo "No pull-request defined, skipping notification."
   exit 0

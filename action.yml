@@ -17,6 +17,9 @@ inputs:
   file:
     description: "Path to the manifest file"
     required: false
+outputs:
+  namespace:
+    description: "The namespace the preview was deployed to"
 runs:
   using: "docker"
   image: "Dockerfile"
